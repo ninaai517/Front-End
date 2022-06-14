@@ -8,6 +8,7 @@ function CadastroAdm() {
     let navigate = useNavigate()
 
     const [confirmarSenha, setConfirmarSenha] = useState<String>("")
+    const [usuario, setUsuario] = useState<User[]>([])
 
     const [user, setUser] = useState<User>({
         id: 0,
@@ -67,8 +68,8 @@ function CadastroAdm() {
     }
     return (
         <>
-            <Grid container direction='row' justifyContent='center' alignItems='center' className='background'>
-                <Grid item xs={6} className='imagem2'></Grid>
+            <Grid container direction='row' justifyContent='center' alignItems='center'>
+                <Grid item xs={6}></Grid>
                 <Grid item xs={6} alignItems='center'>
                     <Box paddingX={10}>
                         <form onSubmit={cadastrar}>
@@ -83,7 +84,8 @@ function CadastroAdm() {
                             <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar senha' name='confirmarSenha' margin='normal'
                                 type='password' required fullWidth />
 
-                            <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='tipo' label='Tipo de cadastro' name='tipo' margin='normal' type='tipo' required fullWidth />
+                            <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='tipo' label='Tipo de usuário' name='tipo' margin='normal' type='tipo' required fullWidth />
+
 
                             <Box marginTop={2} textAlign='center'>
                                 <Link to='/login' className='text-decoration'>
@@ -106,4 +108,4 @@ function CadastroAdm() {
     )
 }
 
-export default CadastroAdm;
+export default CadastroAdm
